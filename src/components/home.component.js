@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import { render } from "@testing-library/react";
+import SideBar from "./sidebar.component";
+
 import "../css/home_styles.css";
+import "../css/sidebar_styles.css";
 
 export default class Home extends Component {
   render() {
@@ -16,9 +18,11 @@ export default class Home extends Component {
               <span class="greeting_text">Welcome back, </span>
               <span class="greeter">Surbhi</span>
             </div>
-            <div>Hamburger Icon</div>
+
+            <SideBar pageWrapId={"page-wrap"} outerContainerId={"App"} />
           </div>
         </nav>
+        <div id="page-wrap"></div>
       </div>
     );
   }
