@@ -1,0 +1,21 @@
+.container {
+  padding: 10px;
+  /* border: 1px solid black; */
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.logo {
+  width: 3rem;
+}
+
+div + div {
+  margin-bottom: 10px;
+}
+
+.company-title {
+  font-size: 2rem;
+}

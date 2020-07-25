@@ -1,3 +1,7 @@
+* {
+  font-size: 25px;
+}
+
 html,
 body,
 #root {
@@ -10,9 +14,27 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: black;
+  background-image: url("images/tinder_background.jpeg");
+  font-family: "Krona One", sans-serif;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+input {
+  padding: 10px;
+  font-family: "Krona One", sans-serif;
+}
+
+button {
+  padding: 10px;
+  font-family: "Krona One", sans-serif;
+}
+
+a {
+  font-size: 0.6rem;
+  color: black;
 }

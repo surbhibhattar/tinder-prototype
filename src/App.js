@@ -1,11 +1,22 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Login_Signup from "./components/login_signup.component";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Login from "./components/login.component";
+import Signup from "./components/signup.component";
+import PageNotFound from "./components/page_not_found.component";
+import Home from "./components/home.component";
+import "./App.css";
 
 function App() {
   return (
     <Router>
-      <Login_Signup />
+      <div>
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/home" component={Home} />
+          <Route component={PageNotFound} />
+        </Switch>
+      </div>
     </Router>
   );
 }

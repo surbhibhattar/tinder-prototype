@@ -1,0 +1,24 @@
+.home {
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav .right {
+  display: inline-flex;
+}
+
+.logo {
+  width: 3rem;
+}
+
+.greeting_text {
+  font-size: 0.5rem;
+}
+
+.greeter {
+  font-size: 0.6rem;
+}
