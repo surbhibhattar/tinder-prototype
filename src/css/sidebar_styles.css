@@ -1,10 +1,20 @@
-#page-wrap {
-  text-align: center;
-  overflow: auto;
-  top: 45%;
-  position: relative;
+html,
+body {
+  margin: 0;
+}
+#App {
+  /* Give app full page to work with */
+  height: 100vh;
 }
 
+#page-wrap {
+  text-align: center;
+
+  /* Prevent sidebar from showing a scrollbar on page */
+  overflow: auto;
+}
+
+/* Individual item */
 .bm-item {
   display: inline-block;
 
@@ -15,16 +25,20 @@
   transition: color 0.2s;
 }
 
+/* Change color on hover */
 .bm-item:hover {
   color: white;
 }
 
+/* The rest copied directly from react-burger-menu docs */
+
+/* Position and sizing of burger button */
 .bm-burger-button {
-  position: fixed;
+  position: relative;
   width: 36px;
   height: 30px;
-  right: 36px;
-  top: 36px;
+  /* right: 36px;
+  top: 36px; */
 }
 
 /* Color/shape of burger icon bars */
@@ -45,7 +59,7 @@
 
 /* General sidebar styles */
 .bm-menu {
-  background: #000;
+  background: #373a47;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
@@ -58,6 +72,7 @@
 /* Wrapper for item list */
 .bm-item-list {
   color: #b8b7ad;
+  display: block;
 }
 
 /* Styling of overlay */

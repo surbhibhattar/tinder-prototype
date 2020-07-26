@@ -8,7 +8,9 @@ nav {
 }
 
 nav .right {
-  display: inline-flex;
+  display: flex;
+  align-items: center;
+  margin: 10px;
 }
 
 .logo {
@@ -21,4 +23,5 @@ nav .right {
 
 .greeter {
   font-size: 0.6rem;
+  margin: 0 10px 0 10px;
 }
