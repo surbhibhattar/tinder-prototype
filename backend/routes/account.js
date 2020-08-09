@@ -1,5 +1,6 @@
 const router = require("express").Router();
 let Account = require("../models/account.model");
+const express = require("express");
 
 router.route("/").get((req, res) => {
   Account.find()
@@ -8,10 +9,12 @@ router.route("/").get((req, res) => {
 });
 
 router.route("/add").post((req, res) => {
+  const name = req.body.name;
   const email = req.body.email;
   const password = req.body.password;
 
   const newAccount = new Account({
+    name,
     email,
     password,
   });
@@ -25,6 +28,7 @@ router.route("/add").post((req, res) => {
 router.route("/update/:id").post((req, res) => {
   Account.findById(req.params.id)
     .then((account) => {
+      account.name = req.body.name;
       account.email = req.body.email;
       account.password = req.body.password;
 

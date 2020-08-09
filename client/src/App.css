@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,3 +18,23 @@
 .App-link {
   color: #61dafb;
 }
+
+/* .nav {
+  padding: 10px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.nav span {
+  color: deeppink;
+}
+
+.nav i {
+  margin-right: 10px;
+  font-size: 40px;
+}
+
+.nav a {
+  display: flex;
+  align-items: center;
+} */

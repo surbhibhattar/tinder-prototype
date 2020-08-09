@@ -1,0 +1,106 @@
+.home {
+  /* text-align: center; */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav .right {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.logo {
+  width: 3rem;
+}
+
+.greeting_text {
+  font-size: 0.5rem;
+}
+
+.greeter {
+  font-size: 0.6rem;
+  margin: 0 10px 0 10px;
+}
+
+.card {
+  width: 11rem;
+  height: 18rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: left;
+  background-color: #f1f1f1;
+}
+
+.card > img {
+  width: 100%;
+  height: 9rem;
+}
+
+#page-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-top: -60px;
+  flex-direction: column;
+}
+
+.scroll_vertical {
+  overflow-y: auto;
+  height: 9rem;
+}
+
+.content {
+}
+
+.username,
+.age {
+  font-size: 0.6rem;
+}
+
+.age,
+.city,
+.content {
+  color: #7a7574;
+}
+
+.city {
+  font-size: 0.4rem;
+}
+
+.content {
+  font-size: 0.5rem;
+}
+
+hr {
+  border-top: 1px solid #ccc;
+}
+
+.options {
+  display: flex;
+  width: 11rem;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+
+.options > * {
+  border-radius: 50%;
+  width: 3rem;
+  border: 2px solid black;
+}
+
+.options > button {
+  background: red;
+}
+
+.options > button + button {
+  background: green;
+}
+
+button:hover {
+  cursor: pointer;
+}

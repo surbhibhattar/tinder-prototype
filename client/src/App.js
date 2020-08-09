@@ -8,16 +8,18 @@ import "./App.css";
 
 function App() {
   return (
-    <Router>
-      <div>
-        <Switch>
-          <Route exact path="/" component={Login} />
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/home" component={Home} />
-          <Route component={PageNotFound} />
-        </Switch>
-      </div>
-    </Router>
+    <div>
+      <Router>
+        <div>
+          <Switch>
+            <Route exact path="/" component={Login} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/home" component={Home} />
+            <Route component={PageNotFound} />
+          </Switch>
+        </div>
+      </Router>
+    </div>
   );
 }
 
