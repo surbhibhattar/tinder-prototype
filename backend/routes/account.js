@@ -6,18 +6,18 @@ const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
 router.route("/login").post((req, res) => {
-  const email = req.body.email;
-  const password = req.body.password;
+  const { email, password } = req.body;
   Account.find().then((account) => {
-    account.forEach((eachAcc) => {
-      if (eachAcc.email.toUpperCase() === email.toUpperCase()) {
-        bcrypt.compare(password, eachAcc.password, function (err, result) {
-          if (result == true) res.status(200).json("Login Successful");
-          if (err) res.status(400).json("Error: " + err);
-        });
-      }
-    });
-    res.status(400).json("Invalid email or password");
+    let acc = account.find(
+      (eachAcc) => eachAcc.email.toUpperCase() === email.toUpperCase()
+    );
+    if (acc) {
+      bcrypt.compare(password, acc.password, function (err, result) {
+        if (err) res.status(400).json("Error: " + err);
+        else if (result) res.status(200).json("Login Successful");
+        else res.status(400).json("Invalid password");
+      });
+    } else res.status(400).json("Invalid email");
   });
 });
 
@@ -49,22 +49,22 @@ router.route("/").get((req, res) => {
 });
 
 router.route("/update/:id").post((req, res) => {
-  Account.findById(req.params.id).then((account) => {
-    account.name = req.body.name;
-    account.email = req.body.email;
-    bcrypt.genSalt(saltRounds, function (err, salt) {
-      bcrypt
-        .hash(req.body.password, salt, function (err, hash) {
+  Account.findById(req.params.id)
+    .then((account) => {
+      account.name = req.body.name;
+      account.email = req.body.email;
+      bcrypt.genSalt(saltRounds, function (err, salt) {
+        bcrypt.hash(req.body.password, salt, function (err, hash) {
           account.password = hash;
 
           account
             .save()
             .then(() => res.json("Account updated!"))
             .catch((err) => res.status(400).json("Error: " + err));
-        })
-        .catch((err) => res.status(400).json("Error: " + err));
-    });
-  });
+        });
+      });
+    })
+    .catch((err) => res.status(400).json("Error: " + err));
 });
 
 router.route("/:id").delete((req, res) => {

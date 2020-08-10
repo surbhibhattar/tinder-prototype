@@ -1,0 +1,5 @@
+GET http://localhost:5000/user/
+
+###
+
+DELETE http://localhost:5000/user/5f1ab0f10277dc1ba996a1e3
